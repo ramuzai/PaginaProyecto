@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block titulo %}Contacto{% endblock %}
+
+{% block contenido %}
+<br><br>
+<h1>¿En que podemos ayudarte?</h1><br>
+<p>Envíanos un correo y nos pondremos<br> en contato a la brevedad!</p>
+<br><br>
+<img src="{% static 'img/contactMail.png' %}" id="logo" style="width: 17%; margin: -3% auto -3% auto;"">
+<div style="padding-bottom: 50px;">
+	<form method="post" action="">{% csrf_token %}
+		{{formulario.as_p}}
+		<p><input type="submit" value="Enviar"></p>
+		
+		{% if error %}
+		
+		{% endif %}
+	</form>
+</div>
+{% endblock %}

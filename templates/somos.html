@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block titulo %}Quienes somos?{% endblock%}
+
+{% block contenido%}
+    <br><br>
+    <h1>Sitio creado con fines didacticos para el curso de BIOS de Python</h1>
+    <br><br>
+    <p>Somos PIC (Productores independientes de cannabis)!</p>
+    <br><br><br><br>
+    <img src="{% static 'img/picLogo.png' %}" id="logo">
+{% endblock%}

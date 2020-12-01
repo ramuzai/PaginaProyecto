@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block titulo %}Nuevo usuario{% endblock %}
+
+{% block contenido %}
+<br><br>
+
+<h2>Registra un nuevo usuario</h2>
+<br><br>
+<img src="{% static 'img/newUser.png' %}" id="logo" style="width: 17%; margin: -1% auto -2% auto;"">
+<form style="padding-bottom: 50px;" method="post" action="">{% csrf_token %}
+
+    <table>{{formulario.as_table}}</table>
+    <p><input type="submit" value="Registrarse"></p>
+</form>
+{% endblock %}

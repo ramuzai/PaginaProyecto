@@ -1,0 +1,277 @@
+@charset "utf-8";
+
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+
+body {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+}
+
+.header {
+	width: 100%;
+	height: 80px;
+	display: block;
+	background-color: #2f3136;
+}
+
+.innerHeader ul {
+	float: right;
+}
+
+.innerHeader ul li {
+	float: right;
+	list-style: none;
+	position: relative;
+}
+
+.innerHeader ul li a {
+	font-family: Impact, Charcoal, sans-serif;
+	color: white;
+	font-size: 21px;
+	padding: 25px 10px;
+	display: block;
+	text-decoration: none;
+}
+
+.innerHeader ul li a:hover {
+	background-color: #106a37;
+}
+
+.innerHeader ul li a:last-child {
+	padding: 25px 13px;
+}
+
+.innerHeader ul li ul {
+	display: none;
+	position: absolute;
+	background-color: #2f3136;
+	padding: 7px;
+	border-radius: 0px 0px 7px 7px;
+	z-index: 9001;
+}
+
+.innerHeader ul li:hover ul {
+	display: block;
+}
+
+.innerHeader ul li ul li {
+	width: 150px;
+	border-radius: 7px;
+	text-align: center;
+}
+
+.innerHeader ul li ul li a:hover {
+	background-color: #106a37;
+}
+
+.innerHeader ul li a img {
+	width: 21px;
+	height: 17px;
+	padding: 0px 10px;
+}
+
+.innerHeader {
+	width: 80%;
+	height: 100%;
+	display: block;
+	margin: 0 auto;
+}
+
+.logoContainer {
+	height: 100%;
+	float: left;
+}
+
+.logoContainer a img {
+	display: block;
+	max-height: 94%;
+	margin-top: 3%;
+	margin-bottom: 3%;
+}
+
+footer{
+	background-color: #2f3136;
+	margin-top: auto;
+	height: 50px;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+footer p {
+	color: white;
+	font-family: Impact, Charcoal, sans-serif;
+	font-size: 21px;
+	flex: 1;
+	text-align: center;
+	margin-left: 120px;
+}
+
+#backToTop {
+	margin-top: 6px;
+	margin-right: 6px;
+	margin-bottom: 6px;
+	border-color: black;
+	border-radius: 4px;
+	font-size: 17px;
+	font-weight: normal;
+	text-align: center;
+	cursor: pointer;
+	padding: 6px 12px;
+	color: white;
+	background-color: #36393f;
+}
+
+#video {
+	display: flex;
+	width: 100%;
+	height: 100vh;
+	object-fit: cover;
+	pointer-events: none;
+} 
+
+h1 {
+	color: black;
+	font-family: Impact, Charcoal, sans-serif;
+	font-size: 42px;
+	text-align: center;
+}
+
+h2 {
+	color: black;
+	font-family: Impact, Charcoal, sans-serif;
+	font-size: 32px;
+	text-align: center;
+}
+
+h3 {
+	color: black;
+	font-family: Impact, Charcoal, sans-serif;
+	font-size: 23px;
+	text-align: center;
+}
+
+p {
+	color: black;
+	font-family: Impact, Charcoal, sans-serif;
+	font-size: 21px;
+	text-align: center;
+}
+
+img {
+	object-fit: contain;
+	padding-bottom: 50px;
+}
+
+form {
+	margin-top: 0;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#logo {
+	object-fit: contain;
+	padding-bottom: 50px;
+	width: 21%;
+	height: auto;
+	margin: auto;
+}
+
+.correo{
+	object-fit: contain;
+	height: 180px;
+	width: 180px;
+	margin: 0 auto;
+	display: block;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.products {
+	display: inline-flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.product {
+	display: flex;
+	flex-direction: column;
+	max-width: 20%;
+	margin: 5px 5px;
+	background-color: #DCDCDC;
+	border-radius: 10px;
+}
+
+.product img {
+	margin: 20px auto;
+	max-width: 85%;
+	min-height: auto;
+}
+
+.product h3 {
+	max-width: 85%;
+	margin: -40px auto 10px auto;
+}
+
+.product p {
+	margin: 0px auto 10px auto;
+	background-color: #55AE3A;
+	padding: 4px 4px;
+	border: solid black 2px;
+	border-radius: 4px;
+}
+
+form#mainBusca {
+	margin: 0px 10% 0px auto;
+	background-color: #DCDCDC;
+	border: solid black 4px;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+form#mainBusca label {
+	color: black;
+	font-family: Impact, Charcoal, sans-serif;
+	font-size: 20px;
+	text-align: left;
+	display: flex;
+	line-height: 20px;
+	margin-bottom: 2px;
+}
+
+input#buttonBusca {
+	border-color: black;
+	border-radius: 4px;
+	font-size: 17px;
+	font-weight: normal;
+	text-align: center;
+	cursor: pointer;
+	padding: 6px 12px;
+	color: white;
+	background-color: #36393f;
+}
+
+input#boxBusca {
+	border-color: black;
+	border-radius: 4px;
+	font-size: 17px;
+	font-weight: normal;
+	padding: 6px 12px;
+	color: black;
+}

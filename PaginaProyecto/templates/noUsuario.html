@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block titulo %}No existe el usuario{% endblock %}
+
+{% block contenido %}
+<br><br>
+<img src="{% static 'img/noUser.png' %}" id="logo">
+<p>No existe ese usuario registrado. Cree un usuario e ingrese al sistema</p>
+{% endblock %}

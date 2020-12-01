@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block titulo %}Todos los productos{% endblock%}
+
+{% block contenido%}
+<br><br>
+<h1>Todos nuestros productos!</h1>
+<br><br>
+<form id="mainBusca" action="/buscar/" method="get">
+    <label for="busca">Buscando algun producto en particular?</label><br>
+    <input id="boxBusca" type="text" name="busca">
+    <input id="buttonBusca" type="submit" value="Buscar">
+</form>
+<br><br>
+<h2 style="margin: 0px auto 0px 10%; font-style: italic;">PRODUCTOS MEDICINALES:</h2>
+<div class="products">
+    {% for Productos_Medicinales in prods1 %}
+    <div class="product">
+        <img src="{{Productos_Medicinales.imagen.url}}" alt="{{Productos_Medicinales.nombre}}">
+        <h3>{{Productos_Medicinales.nombre}}</h3>
+        <p>{{Productos_Medicinales.precio}}</p>
+    </div>
+    {% endfor %}
+</div>
+<br><br>
+<h2 style="margin: 0px auto 0px 10%; font-style: italic;">SEMILLAS:</h2>
+<div class="products">
+    {% for Semillas in prods2 %}
+    <div class="product">
+        <img src="{{Semillas.imagen.url}}" alt="{{Semillas.nombre}}">
+        <h3>{{Semillas.nombre}}</h3>
+        <p>{{Semillas.precio}}</p>
+    </div>
+    {% endfor %}
+</div>
+<br><br>
+<h2 style="margin: 0px auto 0px 10%; font-style: italic;">HERRAMIENTAS:</h2>
+<div class="products">
+    {% for Herramientas in prods4 %}
+    <div class="product">
+        <img src="{{Herramientas.imagen.url}}" alt="{{Herramientas.nombre}}">
+        <h3>{{Herramientas.nombre}}</h3>
+        <p>{{Herramientas.precio}}</p>
+    </div>
+    {% endfor %}
+</div>
+<br><br>
+<h2 style="margin: 0px auto 0px 10%; font-style: italic;">SUPLEMENTOS:</h2>
+<div class="products">
+    {% for Suplementos in prods3 %}
+    <div class="product">
+        <img src="{{Suplementos.imagen.url}}" alt="{{Suplementos.nombre}}">
+        <h3>{{Suplementos.nombre}}</h3>
+        <p>{{Suplementos.precio}}</p>
+    </div>
+    {% endfor %}
+</div>
+<br><br>
+{% endblock%}

@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block titulo %}Error al enviado su correo{% endblock %}
+
+{% block contenido %}
+<br><br>
+<p class="parrafo">Su consulta no pudo ser enviada. Pruebe mas tarde</p>
+<img class="correo" src="{% static 'img/errorMail.png' %}">
+{% endblock %}

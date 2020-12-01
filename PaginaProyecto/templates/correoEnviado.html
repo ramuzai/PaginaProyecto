@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block titulo %}Correo enviado con exito!{% endblock %}
+
+{% block contenido %}
+<br><br>
+<p class="parrafo">Su consulta fue enviada con éxito</p>
+<img class="correo" src="{% static 'img/sentMail.png' %}">
+{% endblock %}

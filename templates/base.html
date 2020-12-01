@@ -1,0 +1,59 @@
+{% load static %}
+<!-- 		productores cannábicos independientes  -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{% block titulo %} {% endblock%}</title>
+	<link rel="shortcut icon" href="{% static 'img/picLogo.png' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+</head>
+<body>
+	<header>
+		<div class="header">
+			<div class="innerHeader">
+				<div class="logoContainer">
+					<a href="{% url 'inicio' %}">
+						<img class="logo" src="{% static 'img/picLogo.png' %}">
+					</a>
+				</div>
+
+				<ul>
+					<li><a href="{% url 'prod0' %}">PRODUCTOS<img id="menuIcon" src="{% static 'img/menu.png' %}"></a>
+						<ul>
+							<li><a href="{% url 'prod1' %}">PRODUCTOS MEDICINALES</a></li>
+							<li><a href="{% url 'prod2' %}">SEMILLAS</a></li>
+							<li><a href="{% url 'prod3' %}">HERRAMIENTAS</a></li>
+							<li><a href="{% url 'prod4' %}">SUPLEMENTOS</a></li>
+						</ul>
+					</li>
+
+					{% if request.user.is_anonymous %}
+
+					<li><a href="{% url 'ingresar' %}">INGRESE</a></li>
+					<li><a href="{% url 'registro' %}">REGISTRESE</a></li>
+
+					{% else %}
+
+					<li><a href="{% url 'salir' %}">SALIR</a></li>
+
+					{% endif %}
+
+					<li><a href="{% url 'contacto' %}">CONTACTO</a></li>
+					<li><a href="{% url 'somos' %}">QUIENES SOMOS</a></li>
+				</ul>
+
+			</div>
+		</div>
+	</header>
+	
+	{% block contenido %}{% endblock %}
+
+	<footer>
+		<p>Proyecto final del curso 2020 Python Bios &copy;</p>
+		<button id="backToTop">Volver arriba</button>
+		<script type="text/javascript" src="{% static 'js/base.js' %}"></script>
+	</footer>
+</body>
+</html>

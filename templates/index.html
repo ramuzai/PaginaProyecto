@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% load static%}
+
+{% block titulo %} PCI | Inicio {% endblock%}
+{% block contenido%}
+<video autoplay muted id="video">
+    <source src="{% static 'img/indexVid.mp4' %}" type="video/mp4">
+</video>
+{% endblock%}

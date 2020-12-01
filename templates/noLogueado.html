@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block titulo %}No logueado{% endblock %}
+
+{% block contenido %}
+<br><br>
+<img src="{% static 'img/noUser.png' %}" id="logo">
+<p>No está identificado en el sitio, ingrese si tiene un usuario o registrese.</p>
+
+{% endblock %}

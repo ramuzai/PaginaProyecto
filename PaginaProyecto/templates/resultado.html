@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block titulo %}Resultados{% endblock %}
+
+{% block contenido %}
+<br><br>
+
+{% if prods1F or prods2F or prods3F or prods4F %}
+
+<br><br>
+<h1>Resultado de la busqueda:</h1>
+<br><br>
+<form id="mainBusca" action="/buscar/" method="get">
+    <label for="busca" style="display:flex;justify-content: center;">Buscar otro producto</label><br>
+    <input id="boxBusca" type="text" name="busca">
+    <input id="buttonBusca" type="submit" value="Buscar">
+</form>
+<br><br>
+<h2 style="margin: 0px auto 0px 10%; font-style: italic;">PRODUCTOS MEDICINALES:</h2>
+<div class="products">
+	{% if not prods1F %}
+	<p style="color: red;">No se encontraron productos que cumplan los requisitos en esta categoria!</p>
+	{% else %}
+	{% for Productos_Medicinales in prods1F %}
+    <div class="product">
+        <img src="{{Productos_Medicinales.imagen.url}}" alt="{{Productos_Medicinales.nombre}}">
+        <h3>{{Productos_Medicinales.nombre}}</h3>
+        <p>{{Productos_Medicinales.precio}}</p>
+    </div>
+	{% endfor %}
+	{% endif %}
+</div>
+<br><br>
+<h2 style="margin: 0px auto 0px 10%; font-style: italic;">SEMILLAS:</h2>
+<div class="products">
+	{% if not prods2F %}
+	<p style="color: red;">No se encontraron productos que cumplan los requisitos en esta categoria!</p>
+	{% else %}
+    {% for Semillas in prods2F %}
+    <div class="product">
+        <img src="{{Semillas.imagen.url}}" alt="{{Semillas.nombre}}">
+        <h3>{{Semillas.nombre}}</h3>
+        <p>{{Semillas.precio}}</p>
+    </div>
+	{% endfor %}
+	{% endif %}
+</div>
+<br><br>
+<h2 style="margin: 0px auto 0px 10%; font-style: italic;">HERRAMIENTAS:</h2>
+<div class="products">
+	{% if not prods4F %}
+	<p style="color: red;">No se encontraron productos que cumplan los requisitos en esta categoria!</p>
+	{% else %}
+    {% for Herramientas in prods4F %}
+    <div class="product">
+        <img src="{{Herramientas.imagen.url}}" alt="{{Herramientas.nombre}}">
+        <h3>{{Herramientas.nombre}}</h3>
+        <p>{{Herramientas.precio}}</p>
+    </div>
+	{% endfor %}
+	{% endif %}
+</div>
+<br><br>
+<h2 style="margin: 0px auto 0px 10%; font-style: italic;">SUPLEMENTOS:</h2>
+<div class="products">
+	{% if not prods3F %}
+	<p style="color: red;">No se encontraron productos que cumplan los requisitos en esta categoria!</p>
+	{% else %}
+    {% for Suplementos in prods3F %}
+    <div class="product">
+        <img src="{{Suplementos.imagen.url}}" alt="{{Suplementos.nombre}}">
+        <h3>{{Suplementos.nombre}}</h3>
+        <p>{{Suplementos.precio}}</p>
+    </div>
+	{% endfor %}
+	{% endif %}
+</div>
+<br><br>
+{% elif error %}
+<p style="color: red;">El cuadro de búsqueda está vacio</p>
+<br><br>
+<form id="mainBusca" action="/buscar/" method="get">
+    <label for="busca" style="display:flex;justify-content: center;">Buscar otro producto</label><br>
+    <input id="boxBusca" type="text" name="busca">
+    <input id="buttonBusca" type="submit" value="Buscar">
+</form>
+<br><br>
+<img src="{% static 'img/blank.png' %}" id="logo">
+{% else %}
+<p>No se encontraron productos en la búsqueda</p>
+<br><br>
+<form id="mainBusca" action="/buscar/" method="get">
+    <label for="busca" style="display:flex;justify-content: center;">Buscar otro producto</label><br>
+    <input id="boxBusca" type="text" name="busca">
+    <input id="buttonBusca" type="submit" value="Buscar">
+</form>
+<br><br>
+<img src="{% static 'img/noResults.png' %}" id="logo">
+{% endif %}
+
+{% endblock %}
